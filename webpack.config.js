@@ -5,8 +5,13 @@ module.exports = {
   entry: path.resolve(__dirname, 'src', 'index.js'),
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'fed-printer.bundle.js'
-  },
+    filename: 'fed-printer.bundle.js',
+    publicPath: "",
+    chunkFilename: "[name].js",
+    libraryTarget: 'umd',//将你的 library 暴露为所有的模块定义下都可运行的方式
+    library: 'fedPrinter'
+  },        
+
   module: {
     rules: [{
         test: /\.(js|jsx)$/,
